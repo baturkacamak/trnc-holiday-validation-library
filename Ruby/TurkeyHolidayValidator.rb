@@ -1,0 +1,2 @@
+class TurkeyHolidayValidator < HolidayValidator
+end
