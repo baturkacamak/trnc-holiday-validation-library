@@ -28,38 +28,11 @@ Birçok kurum ve işletme, resmi tatiller ve özel tatiller için özel düzenle
 - Mevlid Kandili (sadece KKTC)
 
 ## 📚 İçindekiler
-- [Desteklenen Diller 🛠️](#desteklenen-diller-🛠️)
-- [Kurulum ve Kullanım 📦](#kurulum-ve-kullanım-📦)
-    - [PHP](#php)
-    - [Python](#python)
-    - [C#](#c)
-    - [Java](#java)
-    - [JavaScript](#javascript)
-    - [Kotlin](#kotlin)
-    - [Ruby](#ruby)
-    - [Rust](#rust)
-    - [Swift](#swift)
-    - [TypeScript](#typescript)
 - [Testler 🧪](#testler-🧪)
 - [Katkıda Bulunma 🤝](#katkıda-bulunma-🤝)
 - [Lisans 📄](#lisans-📄)
 - [Destek ❤️](#destek-❤️)
 - [İletişim 📧](#iletişim-📧)
-
-
-## Desteklenen Diller 🛠️
-- PHP
-- Python
-- C#
-- C++
-- Go
-- Java
-- JavaScript
-- Kotlin
-- Ruby
-- Rust
-- Swift
-- TypeScript
 
 ## Kurulum ve Kullanım 📦
 
