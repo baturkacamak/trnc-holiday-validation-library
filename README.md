@@ -51,6 +51,8 @@ Birçok kurum ve işletme, resmi tatiller ve özel tatiller için özel düzenle
 - PHP
 - Python
 - C#
+- C++
+- Go
 - Java
 - JavaScript
 - Kotlin
@@ -143,6 +145,83 @@ trncValidator.AddCustomHoliday(new DateTime(2024, 12, 25), true, true);
 date = new DateTime(2024, 12, 25);
 isHoliday = trncValidator.IsHoliday(date);
 Console.WriteLine(isHoliday ? "Özel Tatil" : "Tatil değil");
+```
+</details>
+
+<details>
+<summary>C++</summary>
+
+```cpp
+#include <iostream>
+#include "trnc_holiday_validator.h"
+#include "turkey_holiday_validator.h"
+
+int main() {
+    // KKTC örneği
+    TRNCHolidayValidator trncValidator(true);
+    std::tm date = {};
+    date.tm_year = 2024 - 1900; // Years since 1900
+    date.tm_mon = 10 - 1; // Months since January (0-11)
+    date.tm_mday = 15;
+
+    bool isHoliday = trncValidator.isHoliday(date);
+    std::cout << (isHoliday ? "Tatil" : "Tatil değil") << std::endl;
+
+    // Türkiye örneği
+    TurkeyHolidayValidator turkeyValidator(true);
+    date.tm_mon = 3 - 1; // April
+    date.tm_mday = 23;
+
+    isHoliday = turkeyValidator.isHoliday(date);
+    std::cout << (isHoliday ? "Tatil" : "Tatil değil") << std::endl;
+
+    // Özel tatil ekleme (opsiyonel)
+    date.tm_year = 2024 - 1900; // Years since 1900
+    date.tm_mon = 12 - 1; // December
+    date.tm_mday = 25;
+    trncValidator.addCustomHoliday(date, true, true);
+
+    isHoliday = trncValidator.isHoliday(date);
+    std::cout << (isHoliday ? "Özel Tatil" : "Tatil değil") << std::endl;
+
+    return 0;
+}
+```
+</details>
+
+<details>
+<summary>Go</summary>
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+
+    "./trnc_holiday_validator"
+    "./turkey_holiday_validator"
+)
+
+func main() {
+    // KKTC örneği
+    trncValidator := trnc_holiday_validator.New(true)
+    date := time.Date(2024, time.November, 15, 0, 0, 0, 0, time.UTC)
+    isHoliday := trncValidator.IsHoliday(date)
+    fmt.Println(if isHoliday { "Tatil" } else { "Tatil değil" })
+
+    // Türkiye örneği
+    turkeyValidator := turkey_holiday_validator.New(true)
+    date = time.Date(2024, time.April, 23, 0, 0, 0, 0, time.UTC)
+    isHoliday = turkeyValidator.IsHoliday(date)
+    fmt.Println(if isHoliday { "Tatil" } else { "Tatil değil" })
+
+    // Özel tatil ekleme (opsiyonel)
+    date = time.Date(2024, time.December, 25, 0, 0, 0, 0, time.UTC)
+    trncValidator.AddCustomHoliday(date, true, true)
+    isHoliday = trncValidator.IsHoliday(date)
+    fmt.Println(if isHoliday { "Özel Tatil" } else { "Tatil değil" })
+}
 ```
 </details>
 
